@@ -1,0 +1,13 @@
+
+# HTID:17328320: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:17328320:
+
+Options FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^home$ index.html [L]
+RewriteRule ^utensilios$ utensilios.html [L]
+
+
+
