@@ -40,6 +40,7 @@ h2, strong {
   	font-family: $fuente;
   	color: $colorSubtitulo;
   	font-weight: normal;
+  	margin-bottom: 5px;
   @include tablet {
     	font-size: $subTitulo/2;
       	font-family: $fuente;
@@ -184,24 +185,11 @@ body{
 
 				}
 			}
-	}
-		/*p{
-			text-align: justify;
-			line-height: 2;
-			font-family: $fuente;
-		}	*/
-					
+	}					
 }
 
 #boxProductos{
 	margin-top: 5em;
-
-	/*h2{
-		font-family: $fuente;
-		font-weight: bold;
-		font-size: $titulo;
-		color: $colorTitulo;
-	}*/
 
 	#productos{
 		display: flex;
@@ -233,13 +221,6 @@ body{
 #eventos{
 	margin-top: 5em;
 
-	.carrusel2 /*h2{
-		font-size: $subTitulo;
-		font-family: $fuente;
-		font-weight: bold;
-		color: $colorTitulo;
-	}*/
-
 	.carrusel2 p{
 		font-size: $contenido;
 		font-family: $fuente;
@@ -249,13 +230,6 @@ body{
 
 #contacto{
 	margin-top: 5em;
-
-	/*h2{
-		font-family: $fuente;
-		font-weight: bold;
-		font-size: $titulo;
-		color: $colorTitulo;
-	}*/
 }
 
 .contacto{
@@ -291,7 +265,7 @@ body{
 	width: 33.33%;
 }
 
-/*ESTILOS PAGINA DE UTENSILIOS*/
+/*ESTILOS PAGINA DE UTENSILIOS Y CRISTALERIA */
 
 @mixin tituloDos {
 	color: $colorSubtitulo;
@@ -317,22 +291,15 @@ body{
 	align-items: center;
 	padding-top: 150px;
 
-	/*h2{
-		@include tituloDos;
-	}
-
 	h3{
 		@include tituloTres;
-	}*/
+		margin-top: 5px;
+	}
 
 	h4{
 		@include descripcion;
 		font-weight: bold;
 	}
-
-	/*p{
-		@include descripcion;
-	}*/
 
 	li{
 		@include descripcion;
@@ -373,5 +340,15 @@ body{
 		align-items: center;
 		text-align: center;
 	}
-}
 
+	.boxCristaleria{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 50%;
+		padding: 5px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+}
