@@ -79,7 +79,7 @@ p {
 
 
 body{
-		font: $fuente;
+		font-family: $fuente;
 		a:link, a:visited, a:active {
 	    text-decoration:none;
 	    color: $colorTexto;
@@ -176,6 +176,7 @@ body{
 
 		h3{
 			font-family: $fuente;
+			font-weight: normal;
 		}
 
 		img{
@@ -265,7 +266,7 @@ body{
 	width: 33.33%;
 }
 
-/*ESTILOS PAGINA DE UTENSILIOS Y CRISTALERIA */
+/*ESTILOS PAGINA DE UTENSILIOS CRISTALERIA Y COMPLEMENTOS*/
 
 @mixin tituloDos {
 	color: $colorSubtitulo;
@@ -294,6 +295,7 @@ body{
 	h3{
 		@include tituloTres;
 		margin-top: 5px;
+		font-weight: normal;
 	}
 
 	h4{
@@ -347,6 +349,17 @@ body{
 		align-items: center;
 		justify-content: center;
 		width: 50%;
+		padding: 5px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.boxComplementos{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
 		padding: 5px;
 		margin-top: 15px;
 		margin-bottom: 15px;
