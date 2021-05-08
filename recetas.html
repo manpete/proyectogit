@@ -9,24 +9,45 @@
 </head>
 <body>
 	<header id="header">
-		<div class="menu">
-			<a href="#index.html" class="menu__logo"><img src="images/logo.jpg" alt="logo"></a>
+		<div class="cabezera">
+			<div class="menu" onclick="myClick()">
+				<a><img src="images/menu.png" alt="logo"></a>
+			</div>
+			<a class="logo" href="#index.html"><img src="images/logo.jpg" alt="logo"></a>
+			<div class="sesion">
+				<a>Inicio de Sesion</a>
+				<a>|</a>
+				<a>Ayuda</a>
+			</div>	
+		</div>
+	</header>
+
+	<div id="botonera">
+		<div id="cerrar" onclick="myClick()">X</div>
+		<div class="listado">
 		    <ul>
 		    	<li><a href="index.html">Home</a></li>
 		       	<li><a href="index.html#nosotros">Nosotros</a></li>
+		     	<li><a href="index.html#productos">Productos</a>
+		     		<ul>
+		     			<li><a href="utensilios.html">Utensilios</a></li>
+		     			<li><a href="cristaleria.html">Cristaleria</a></li>
+		     			<li><a href="complementos.html">Complementos</a></li>
+		     		</ul>
+		     	</li>
 		     	<li><a href="recetas.html">Recetas</a></li>
-		       	<li><a href="index.html#eventos">Eventos</a></li>
-		     	<li><a href="index.html#contacto">Contacto</a></li>
+		       	<li><a href="#eventos">Eventos</a></li>
+		     	<li><a href="#contacto">Contacto</a></li>
 		   	 </ul>
 		</div>
-	</header>
+	</div>
 	
 	<div id="contenedor">
 		<h2>Nuestra guia de recetas</h2>
 		<h3>-Se el propio autor de tus tragos-</h3>
 		<div class="producto">
 			<div class="boxComplementos">
-				<img src="images/receta/coctel.jpg" alt="coctel1">
+				<img src="images/Receta/coctel.jpg" alt="coctel1">
 				<h4>Deep Blue frozen Martini</h4>
 						<p>Ingredientes</p>
 						<ul>
@@ -54,5 +75,15 @@
 		</div>
 
 	</div>
+		<script type="text/javascript">
+		function myClick() {
+		  var element = document.getElementById("botonera");
+		  if(element.classList.contains("visible")){
+		  	element.classList.remove("visible");
+		  }else{
+		  	element.classList.add("visible");
+		  }		  
+		}
+	</script>
 </body>
 </html>

@@ -86,72 +86,74 @@ body{
 	}
 }
 
-/*#header{
-		min-height: 90px;
+
+#header{
 		top: 0;
-		position: fixed;
-		@include tablet {
-			position: relative;
-		}
+		position: relative;
 		background: $fondo;
 		width: $max-width;
-		z-index: 100;
-		border-bottom: 0.5px solid $linea;
 
-	.menu {
-		display: block;
-		@include tablet {
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: center;
-		}
+	.cabezera{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 		max-width: 80%;
 		margin: auto;
-	}
+		align-items: center;
 
-	.menu__logo {
-		width: 20%;
-		display: block;
-		@include tablet {
-			display: flex;
-			flex-flow: row nowrap;
-		}
-		float: left;
-	}
+			.menu{
+				width: 20%;
+				cursor: pointer;
+				display: block;
+				text-align: right;
+				padding-right: 50px;
+				img{
+					width: 15%;
+					}
+			}	
 
-	.menu img {
-		width: 80%;
-		display: block;
-		@include tablet {
-			display: flex;
-		}
-	}
+			.logo{
+				width: 40%;
+				display: block;
+				img{
+					width: 50%;
+				}
+			}
 
-	.menu ul{
-		list-style: none;
-		float: left;
-		@include tablet {
-			margin:auto;
-		}
+			.sesion{
+				width: 40%;
+				display:block;
+				text-align: right;
+				padding: 15px;
+			}
 	}
+}
 
-	.menu ul li {
-		display: inline-block;
-		@include tablet {
-			display: inline;
-			padding-left: 1rem;
-		}
-		padding: 2rem;
-		margin: auto;
-		font-size: $contenido;
-	}
-}*/
-
-#menu{
+#botonera{
 	position: fixed;
 	top: 0;
-	left: 0;
-	cursor: pointer;
+	z-index: 100;
+	height: 100vh;
+	width: 250px;
+	background-color:#e4e0e0;
+	opacity:0.6;
+	transform: translate(-250px);
+	
+	.listado{
+		padding-top: 50px;
+		a {
+			color: $colorTitulo;
+		}
+		li {
+			list-style: none;
+			color: $colorTitulo;
+		}
+
+	}
+}
+
+#botonera.visible{
+	transform: translate(0px);
 }
 
 #cerrar{
@@ -161,22 +163,7 @@ body{
 	cursor: pointer;
 }
 
-#botonera{
-	position: fixed;
-	top: 0;
-	z-index: 100;
-	height: 100vh;
-	width: 250px;
-	background: linear-gradient(to right, #003d78 29%, #003d78 38%, #001d52 100%);
-	transform: translate(-250px);
-}
-
-#botonera.visible{
-	transform: translate(0px);
-}
-
 .carrusel {
-	padding-top: 90px;
 	img{
 		max-height: 542px;
 	}
