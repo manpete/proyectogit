@@ -1,5 +1,5 @@
-@mixin tablet {
-  @media only screen and (max-width: 768px) {
+@mixin phone {
+  @media only screen and (max-width: 736px) {
     @content;
   }
 }
@@ -21,7 +21,7 @@ h1, em {
   	font-family: $fuente;
   	color: $colorTitulo;
   	font-style: normal;
-  @include tablet {
+  @include phone {
     	font-size: $titulo/2;
       	font-family: $fuente;
   		color: $colorTitulo;
@@ -41,7 +41,7 @@ h2, strong {
   	color: $colorSubtitulo;
   	font-weight: normal;
   	margin-bottom: 5px;
-  @include tablet {
+  @include phone {
     	font-size: $subTitulo/2;
       	font-family: $fuente;
   		color: $colorSubtitulo;
@@ -61,7 +61,7 @@ p {
   	color: $colorTexto;
   	text-align: justify;
 	line-height: 1;
-  @include tablet {
+  @include phone {
     	font-size: $contenido/2;
       	font-family: $fuente;
   		color: $colorTexto;
@@ -113,7 +113,7 @@ body{
 			}	
 
 			.logo{
-				width: 40%;
+				width: 30%;
 				display: block;
 				img{
 					width: 50%;
@@ -164,13 +164,22 @@ body{
 }
 
 .carrusel {
-	img{
-		max-height: 542px;
-	}
-	@include tablet{
-		padding-top: 0px;
+	@include phone {
+				max-width: 414px;
+				content: url("../images/bannerMob.png");
+
+				}
+	h1 {
+		color: $colorTexto;
 	}
 	
+}
+
+.hashtag {
+	text-align: right;
+	font-size: 5rem;
+	color: $colorTexto;
+	padding-top: 60px;
 }
 
 #nosotros {
@@ -185,7 +194,7 @@ body{
 			padding: 5px;
 			box-sizing: border-box;
 			margin-bottom: 15px;
-			width: 50%;
+			width: 25%;
 			font-size:$contenido;
 		}
 
@@ -196,7 +205,7 @@ body{
 
 		img{
 			width: 100%;
-			@include tablet {
+			@include phone {
 				content: url("../images/nosotrosMob.jpg");
 
 				}
@@ -209,6 +218,7 @@ body{
 
 	#productos{
 		display: flex;
+		flex-direction: row;
 	}
 
 	#productos .productos__nuestrosProductos {
@@ -216,12 +226,12 @@ body{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 33.33%;
+		width: 50%;
 		padding: 10px;
 		text-align: center;
 
 		img{
-			width: 50%;
+			width: 100%;
 			margin-bottom: 20px;
 			transition: height 2s, width 1s; 
 		}
