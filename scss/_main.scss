@@ -1,5 +1,5 @@
 @mixin phone {
-  @media only screen and (max-width: 736px) {
+  @media only screen and (max-width: 414px) {
     @content;
   }
 }
@@ -55,6 +55,26 @@ h2, strong {
   }
 }
 
+h3 {
+  	font-size: $subTitulo/2;
+  	font-family: $fuente;
+  	color: $colorTexto;
+  	font-weight: normal;
+  	margin-bottom: 5px;
+  @include phone {
+    	font-size: $contenido;
+      	font-family: $fuente;
+  		color: $colorTexto;
+  		font-weight: normal;
+  }
+  @include desktop {
+    	font-size: $subTitulo;
+    	font-family: $fuente;
+  		color: $colorTexto;
+  		font-weight: normal;
+  }
+}
+
 
 body{
 		font-family: $fuente;
@@ -105,6 +125,10 @@ body{
 				padding: 15px;
 			}
 	}
+
+	 @include phone {
+    	font-size: .4em;
+  }
 }
 
 #botonera{
@@ -127,6 +151,9 @@ body{
 		}
 
 	}
+	@include phone {
+    	font-size: .7em;
+  }
 }
 
 #botonera.visible{
@@ -136,43 +163,54 @@ body{
 #cerrar{
 	position: fixed;
 	top: 0;
-	right: 0;
+	right: 10px;
 	cursor: pointer;
+	font-weight: bold;
+
 }
 
 .carrusel {
 	@include phone {
-				max-width: 414px;
-				content: url("../images/bannerMob.png");
-
-				}
+				max-width: 100%;
+				padding-top: 25px;
+			}
 	h1 {
 		color: $colorTexto;
 	}
 	
 }
-
+	
 .hashtag {
 	text-align: right;
 	font-size: 5rem;
 	color: $colorTexto;
 	padding-top: 60px;
+	@include phone {
+    	margin-top: 5px;
+  }
+}
+
+.cinta img{
+	width: 100%;
+	@include phone {
+    	width: 100%;
+    	margin-top: 10px;
+  }
 }
 
 #nosotros {
-	margin-top: 20em;
-
+	margin-top: 10em;
+	display: flex;
 	.nosotros {
 		display: flex;
-
+		width:50%;
 		.nosotros__boxNosotros {
-			flex-direction: column;
+			display: flex;
 			align-items: center;
 			padding: 5px;
 			box-sizing: border-box;
 			margin-bottom: 15px;
-			width: 25%;
-			font-size:$contenido;
+			width: 50%;
 		}
 
 		h3{
@@ -182,12 +220,34 @@ body{
 
 		img{
 			width: 100%;
-			@include phone {
-				content: url("../images/nosotrosMob.jpg");
-
-				}
 			}
-	}					
+	}
+
+	@include phone {
+		margin-top: 5em;
+		display: flex;
+		.nosotros {
+			display: flex;
+			flex-direction: column;
+			width:100%;
+			.nosotros__boxNosotros {
+				display: flex;
+				align-items: center;
+				padding: 5px;
+				box-sizing: border-box;
+				margin-bottom: 15px;
+				width: 100%;
+			}
+			h3{
+				font-family: $fuente;
+				font-weight: normal;
+			}
+			img{
+				width: 100%;
+				}
+		}
+    	
+	 }					
 }
 
 #boxProductos{
@@ -253,12 +313,22 @@ body{
 		width: 70px;
 		margin-bottom: 1em;
 	}
+
+	@include phone {
+		.contacto__rSociales img{
+		width: 35px;
+		margin-bottom: 1em;
+		}
+	}
 }
 
 #footer {
 	display: flex;
 	padding: 3em;
 	background-color: black;
+	@include phone {
+    	font-size: .5px;
+  }
 }
 
 .boxFooter {
@@ -287,78 +357,42 @@ body{
 	font-size: $contenido;
 }
 
-#contenedor {
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.boxProducto img {
+	width: 300px;
+	@include phone {
+		width: 150px;
+	}
+}
 
-	h3{
-		@include tituloTres;
-		margin-top: 5px;
-		font-weight: normal;
+.boxProducto li {
+	list-style: none;
+	@include phone {
+		font-size: 15px;
 	}
+}
 
-	h4{
-		margin: 0;
+.boxProducto h4 {
+	@include phone {
+		font-size: 15px;
+		font-weight: bold;
 	}
+}
 
-	a{
-		@include tituloTres;
-		font-size: 1.5rem;
-		text-align: center;
-	}
+.boxProducto ul {
+	padding: 0;
+}	
 
-	.producto {
-		display: flex;
-	}
-	.boxProducto{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 33.0%;
-		padding: 5px;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-	ul{
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	img{
-		width: 60%;
-	}
-	.centrado {
+.centrado {
 		margin-top: 15px;
 		display:flex;
 		flex-direction: column;
+		font-size: $contenido
 	}
-	.centrado1{
+.centrado1{
 		align-items: center;
 		text-align: center;
-	}
-
-	.boxCristaleria{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 50%;
-		padding: 5px;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-
-	.boxComplementos{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		padding: 5px;
-		margin-top: 15px;
-		margin-bottom: 15px;
+	a {
+		font-size: 20px;
 	}
 }
